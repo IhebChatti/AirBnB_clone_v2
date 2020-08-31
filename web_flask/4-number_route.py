@@ -57,6 +57,14 @@ def pythonIsCool(text):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
+    """[number route]
+
+    Args:
+        n ([int]): [number passed]
+
+    Returns:
+        [str]: [text to be returned wheather int or 404]
+    """
     if isinstance(n, int):
         return '{} is a number'.format(n)
 
