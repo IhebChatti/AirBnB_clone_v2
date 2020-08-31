@@ -39,7 +39,10 @@ class DBStorage:
         my_dict = {}
         query = []
         if cls is not None:
+            if isinstance(cls, str):
+                cls = eval(cls)
             query = self.__session.query(cls).all()
+
         if cls is None:
             query += self.__session.query(User).all()
             query += self.__session.query(State).all()
