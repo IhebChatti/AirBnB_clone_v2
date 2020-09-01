@@ -80,7 +80,7 @@ def numberTemplate(n):
         [html]: [fetches html page]
     """
     if isinstance(n, int):
-        return render_template('5-number.html')
+        return render_template('5-number.html', n=n)
 
 if __name__ == "__main__":
     app.run('0.0.0.0', 5000)
