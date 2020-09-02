@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""[summary]
+"""[python script that starts a Flask web application]
 """
 from models import storage
 from flask import Flask, render_template
@@ -16,6 +16,11 @@ def teardown(error):
 
 @app.route('/hbnb_filters', strict_slashes=False)
 def StatesAndcitiesByState():
+    """[statesand cities by state]
+
+    Returns:
+        [html]: [fetches html page]
+    """
     states = storage.all("State")
     amenities = storage.all("Amenity")
     return render_template('10-hbnb_filters.html', states=states,
