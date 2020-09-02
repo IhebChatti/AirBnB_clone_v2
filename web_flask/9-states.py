@@ -26,8 +26,9 @@ def StatesAndcitiesByState(id=None):
     if id is None:
         return render_template('9-states.html', states=states)
     for state in storage.all("State").values():
-        return render_template("9-states.html", state=state)
+        if state.id == id:
+            return render_template("9-states.html", state=state)
+    return render_template("9-states.html")
 
-    
 if __name__ == "__main__":
     app.run('0.0.0.0', 5000)
