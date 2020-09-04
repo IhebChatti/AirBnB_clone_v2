@@ -53,9 +53,11 @@ class Place(BaseModel, Base):
         Returns:
             [list]: [list of Amenities]
         """
+        import models
+        from models.amenity import Amenity
         amenities_list = []
         for ams in models.storage.all(Amenity).values():
-            if amenity_id in amenities.amenity_id:
+            if ams.id in ams.id:
                 amenities_list.append(ams)
         return amenities_list
 
