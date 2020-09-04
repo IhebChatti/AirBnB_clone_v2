@@ -14,7 +14,7 @@ def teardown(error):
     storage.close()
 
 
-@app.route('/hbnb', strict_slashes=False)
+@app.route("/hbnb", strict_slashes=False)
 def StatesAndcitiesByState():
     """[statesand cities by state]
 
@@ -23,7 +23,7 @@ def StatesAndcitiesByState():
     """
     states = storage.all("State")
     amenities = storage.all("Amenity")
-    return render_template('100-hbnb.html', states=states,
+    return render_template("100-hbnb.html", states=states,
                            amenities=amenities)
 
 if __name__ == "__main__":
